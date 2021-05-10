@@ -7,15 +7,16 @@ import be.bxl.formation.interfaces.IFish;
 import java.time.LocalDateTime;
 import java.util.Random;
 
-public class Sole extends HerbivorousFish {
+public class ClownFish extends CarnivorousFish {
 
-    public Sole(String name, GenderEnum gender) {
-        super(name, FishEnum.SOLE, gender);
+    public ClownFish(String name, GenderEnum gender) {
+        super(name, FishEnum.CLOWN_FISH, gender);
     }
 
-    public Sole(int hp, int age, String name, GenderEnum gender) {
-        super(hp, age, name, FishEnum.SOLE, gender);
+    public ClownFish(int hp, int age, String name, GenderEnum gender) {
+        super(hp, age, name, FishEnum.CLOWN_FISH, gender);
     }
+
 
     @Override
     protected boolean checkCompatibleForReproduce(IFish fish) {
@@ -36,6 +37,6 @@ public class Sole extends HerbivorousFish {
         //TODO Make random name
         String name = this.getName() + LocalDateTime.now().getSecond();
 
-        return new Sole(name, gender);
+        return new ClownFish(name, gender);
     }
 }
