@@ -70,6 +70,9 @@ public abstract class Fish extends Being implements IFish, IMeatFood {
 
     @Override
     public IFish toReproduce(IFish fish) {
+        if(this == fish) { // Meme objet mémoire
+            return  null;
+        }
 
         if(checkCompatibleForReproduce(fish)) {
             return makeBaby();
