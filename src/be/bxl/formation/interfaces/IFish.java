@@ -10,6 +10,8 @@ public interface IFish extends IBeing {
     FishEnum getSpecie();
     boolean isHungry();
 
+    void setName(String name);
+
     void eat(IFood food);
     IFish toReproduce(IFish fish);
 }
