@@ -2,6 +2,7 @@ package be.bxl.formation.models;
 
 import be.bxl.formation.enums.FishEnum;
 import be.bxl.formation.enums.GenderEnum;
+import be.bxl.formation.helpers.RandomHelper;
 import be.bxl.formation.interfaces.IFish;
 
 import java.time.LocalDateTime;
@@ -31,8 +32,8 @@ public class Grouper extends CarnivorousFish {
 
     @Override
     protected IFish makeBaby() {
-        //TODO Make random name
-        String name = this.getName() + LocalDateTime.now().getSecond();
+        RandomHelper rng = new RandomHelper();
+        String name = rng.nextName();
 
         return new Grouper(name);
     }

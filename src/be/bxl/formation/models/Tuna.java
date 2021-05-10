@@ -2,6 +2,7 @@ package be.bxl.formation.models;
 
 import be.bxl.formation.enums.FishEnum;
 import be.bxl.formation.enums.GenderEnum;
+import be.bxl.formation.helpers.RandomHelper;
 import be.bxl.formation.interfaces.IFish;
 
 import java.time.LocalDateTime;
@@ -20,11 +21,9 @@ public class Tuna extends CarnivorousFish {
 
     @Override
     protected IFish makeBaby() {
-        Random rng = new Random();
-        GenderEnum gender = (rng.nextInt(2) == 0) ? GenderEnum.FEMALE : GenderEnum.MALE;
-
-        //TODO Make random name
-        String name = this.getName() + LocalDateTime.now().getSecond();
+        RandomHelper rng = new RandomHelper();
+        String name = rng.nextName();
+        GenderEnum gender = rng.nextGender();
 
         return new Tuna(name, gender);
     }
