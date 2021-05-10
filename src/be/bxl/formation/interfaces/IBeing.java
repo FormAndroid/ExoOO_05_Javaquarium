@@ -7,5 +7,4 @@ public interface IBeing {
     boolean isAlive();
 
     void grow();
-    void takeDamage();
 }
