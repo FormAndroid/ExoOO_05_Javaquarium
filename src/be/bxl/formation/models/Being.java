@@ -2,7 +2,7 @@ package be.bxl.formation.models;
 
 import be.bxl.formation.interfaces.IBeing;
 
-public class Being implements IBeing {
+public abstract class Being implements IBeing {
 
     private int age;
     private int hp;
