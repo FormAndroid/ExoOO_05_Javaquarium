@@ -59,7 +59,7 @@ public abstract class Fish extends Being implements IFish, IMeatFood {
     }
 
     @Override
-    public abstract void eat(IFood food);
+    public abstract boolean eat(IFood food);
 
     protected boolean checkCompatibleForReproduce(IFish fish) {
         return this.getSpecie() == fish.getSpecie()
@@ -84,5 +84,10 @@ public abstract class Fish extends Being implements IFish, IMeatFood {
     @Override
     public void toBeEat() {
         this.modifyHp(-4);
+    }
+
+    @Override
+    public String toString() {
+        return "[" + getSpecie() + "] " + getName();
     }
 }

@@ -16,11 +16,13 @@ public abstract class CarnivorousFish extends Fish{
     }
 
     @Override
-    public void eat(IFood food) {
+    public boolean eat(IFood food) {
 
         if(food instanceof IMeatFood) {
             food.toBeEat();
             this.modifyHp(5);
+            return true;
         }
+        return false;
     }
 }

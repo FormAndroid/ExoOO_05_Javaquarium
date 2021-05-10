@@ -36,4 +36,9 @@ public class Seaweed extends Being implements ISeaweed, IVegetalFood {
     public void toBeEat() {
         this.modifyHp(-2);
     }
+
+    @Override
+    public String toString() {
+        return "Une Algue";
+    }
 }

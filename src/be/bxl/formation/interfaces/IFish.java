@@ -12,6 +12,6 @@ public interface IFish extends IBeing {
 
     void setName(String name);
 
-    void eat(IFood food);
+    boolean eat(IFood food);
     IFish toReproduce(IFish fish);
 }
